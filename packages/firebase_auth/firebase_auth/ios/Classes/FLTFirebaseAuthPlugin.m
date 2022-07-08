@@ -114,6 +114,8 @@ NSString *const kErrMsgInvalidCredential =
 }
 
 - (void)detachFromEngineForRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
+  if (registrar == nil)
+        return;
   [self cleanupWithCompletion:nil];
 }
 

@@ -126,6 +126,8 @@ typedef NS_ENUM(NSUInteger, FLTFirebaseStorageStringType) {
 }
 
 - (void)detachFromEngineForRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
+  if (registrar == nil)
+        return;
   [self cleanupWithCompletion:^() {
     self.channel = nil;
   }];

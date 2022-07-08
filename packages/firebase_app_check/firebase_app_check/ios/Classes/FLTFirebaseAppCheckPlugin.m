@@ -56,6 +56,8 @@ NSString *const kFLTFirebaseAppCheckChannelName = @"plugins.flutter.io/firebase_
 }
 
 - (void)detachFromEngineForRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
+  if (registrar == nil)
+        return;
   [self cleanupWithCompletion:nil];
 }
 

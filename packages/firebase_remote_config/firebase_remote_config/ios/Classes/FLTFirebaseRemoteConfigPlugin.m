@@ -48,6 +48,8 @@ NSString *const kFirebaseRemoteConfigChannelName = @"plugins.flutter.io/firebase
 }
 
 - (void)detachFromEngineForRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
+  if (registrar == nil)
+        return;
   self.channel = nil;
 }
 
